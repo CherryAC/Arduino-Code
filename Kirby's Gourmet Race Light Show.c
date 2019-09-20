@@ -1,6 +1,6 @@
-//LIGHT SHOW TO “KIRBY’S GOURMET RACE" SONG - https://www.youtube.com/watch?v=3w4B16TRsPM
-//play the song after the third beep of the buzzer to sync the music and lights
-
+//LIGHT SHOW TO “KIRBY’S GOURMET RACE” SONG
+//play this video https://www.youtube.com/watch?v=3w4B16TRsPM after the third beep sounds to sync the lights and music
+//light show stops at 1:04
 int red1=2, red2=11, green1=3, green2=10, blue1=4, blue2=9, yellow1=5, yellow2=8;
 
 int buzzerPin=7;
@@ -23,10 +23,10 @@ void setup(){
   delay(1000);
   tone(buzzerPin, 300, duration);
   delay(1000);
-  Intro(); 
-  Chorus(); 
-  Chorus2(); 
-  Chorus3(); 
+  Intro(); //measures 1-2
+  Chorus();
+  Chorus2();
+  Chorus3();
   Chorus4();
   Chorus5();
   Chorus6();
@@ -46,24 +46,24 @@ void Intro(){
     digitalWrite(Lights[i],HIGH);
   }
   delay(323);
-  //First eighth note run
+  //First eighth note run (measure 1)
   for(i=0;i<=4;i++){
     digitalWrite(Lights[i],LOW);
     delay(152);
   }
   delay(161);
-  //Second eighth note run
+  //Second eighth note run (measure 2)
   for(i=4;i<=7;i++){
     digitalWrite(Lights[i],LOW);
     delay(152);
   }
-  //High eighth
+  //High eighth (second to last note of measure 2)
   for(i=7;i>=0;i=i-2){
     digitalWrite(Lights[i],HIGH);
     digitalWrite(Lights[i-1],HIGH);
     delay(35.5);
   }
-  //Low half
+  //Low half (last note of measure 2)
   for(i=7;i>=0;i=i-2){
     digitalWrite(Lights[i],LOW);
     digitalWrite(Lights[i-1],LOW);
@@ -73,23 +73,23 @@ void Intro(){
 }
 
 void Chorus(){
-  //First chord 
+  //First chord (first half of measure 3)
   for(i=0;i<=7;i++){
     digitalWrite(Lights[i],HIGH);
   }
   delay(646);
-  //Second chord 
+  //Second chord (second half of measure 3)
   digitalWrite(red1,LOW);
   digitalWrite(red2,LOW);
   delay(400);
-  //First chord run 
+  //First chord run (measure 4)
   for(i=0;i<=7;i=i+2){
     digitalWrite(Lights[i],LOW);
     digitalWrite(Lights[i+1],LOW);
     delay(323);
   }
   delay(323);
-  //Random chord run 
+  //Random chord run (measure 5-6)
   digitalWrite(red1,HIGH);
   delay(275);
   digitalWrite(yellow2,HIGH);
@@ -520,4 +520,5 @@ void Chorus10(){
 
   
   
+
 
