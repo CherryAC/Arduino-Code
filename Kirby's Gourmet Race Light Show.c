@@ -23,7 +23,7 @@ void setup(){
   delay(1000);
   tone(buzzerPin, 300, duration);
   delay(1000);
-  Intro(); //measures 1-2
+  Intro();
   Chorus();
   Chorus2();
   Chorus3();
